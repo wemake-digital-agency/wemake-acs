@@ -189,6 +189,7 @@ body.wmacs-tab a:focus {
   outline-color: #ff9e00;
 }
 body.acs-grayscale * {
+  -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
   -o-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
@@ -197,7 +198,9 @@ body.acs-grayscale * {
 body.acs-contrast *, body.acs-contrast-negative * {
   -webkit-user-select: text !important;
   -moz-user-select: text !important;
+  -ms-user-select: text !important;
   user-select: text !important;
+  -webkit-box-shadow: none !important;
   box-shadow: none !important;
   text-shadow: none !important;
 }
@@ -229,6 +232,7 @@ body.acs-contrast input, body.acs-contrast textarea {
 body.acs-contrast img {
   opacity: 1 !important;
   background-color: grey !important;
+  -webkit-filter: none !important;
   filter: none !important;
 }
 body.acs-contrast-negative {
@@ -262,6 +266,7 @@ body.acs-contrast-negative input, body.acs-contrast-negative textarea {
 }
 body.acs-contrast-negative img {
   opacity: 1 !important;
+  -webkit-filter: none !important;
   filter: none !important;
 }
 body.acs-contrast-negative .acs-wemake svg path {
@@ -330,10 +335,14 @@ body.acs-fonts :not(span) {
   display: block;
   width: 358px;
   height: auto;
+  -webkit-transform: translateX(-100.5%);
+  -ms-transform: translateX(-100.5%);
   transform: translateX(-100.5%);
   z-index: 9999;
   padding: 12px 24px 18px;
+  -webkit-transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-border-radius: 6px;
   border-radius: 6px;
   border-top: 8px solid #116FFF;
   background-color: #EFF1F5;
@@ -354,7 +363,10 @@ body.acs-fonts :not(span) {
 }
 #wemake-acs.active {
   left: 0;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
 }
 @media all and (min-width: 769px) {
@@ -413,6 +425,8 @@ body.acs-fonts :not(span) {
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
 
@@ -509,4 +523,5 @@ ul.acs-items li:last-of-type .acs-link {
     display: none !important;
   }
 }
+
 /*# sourceMappingURL=wemake-acs.css.map */

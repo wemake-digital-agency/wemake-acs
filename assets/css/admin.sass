@@ -1,3 +1,4 @@
+@use "sass:color"
 @import mixins
 
 @font-face
@@ -129,7 +130,8 @@ body.wp-admin
     align-items: center
     +transition(0.3s)
     &:hover
-      background: darken(#00adff, 10%)
+      background: adjust(#00adff, -10%)
+
   .plugins #wemake-acs-update
     .notice > p
       display: none

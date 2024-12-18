@@ -37,8 +37,13 @@ body.wp-admin .wmacs-fields-wr {
 }
 body.wp-admin .wmacs-fields-wr.-compact {
   max-width: 800px;
+  display: -webkit-flex;
   display: -moz-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 body.wp-admin .wmacs-fields-wr.-compact .wmacs-settings-field {
@@ -154,7 +159,7 @@ body.wp-admin .wmacs-form-submit {
   -o-transition: all 0.3s ease-in-out;
 }
 body.wp-admin .wmacs-form-submit:hover {
-  background: #008acc;
+  background: adjust(#00adff, -10%);
 }
 body.wp-admin .plugins #wemake-acs-update .notice > p {
   display: none;
@@ -194,4 +199,5 @@ body.wp-admin .sp-preview-inner {
 body.wp-admin .sp-dd {
   padding: 5px 0 2px;
 }
+
 /*# sourceMappingURL=admin.css.map */
