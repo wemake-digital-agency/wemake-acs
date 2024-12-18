@@ -1,0 +1,337 @@
+# SOME DESCRIPTIVE TITLE.
+
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+
+# This file is distributed under the same license as the PACKAGE package.
+
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+
+msgid ""
+
+msgstr ""
+
+"Project-Id-Version: \n"
+
+"Report-Msgid-Bugs-To: \n"
+
+"POT-Creation-Date: 2020-02-13 12:02GMT 2\n"
+
+"PO-Revision-Date: 2020-03-18 11:35+0200\n"
+
+"Last-Translator: \n"
+
+"Language-Team: Wemake\n"
+
+"Language: he_IL\n"
+
+"MIME-Version: 1.0\n"
+
+"Content-Type: text/plain; charset=UTF-8\n"
+
+"Content-Transfer-Encoding: 8bit\n"
+
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+"X-Generator: Eazy Po 0.9.5.3\n"
+
+": \n"
+
+
+
+# /inc/admin_update.php
+
+msgid "There is a new version of %s available."
+
+msgstr "קיימת גרסא חדשה של התוסף %s."
+
+
+
+# /inc/admin_update.php
+
+msgid "update now"
+
+msgstr "עדכן עכשיו"
+
+
+
+# /inc/admin_update.php
+
+msgid "Updating..."
+
+msgstr "מעדכן..."
+
+
+
+# /inc/admin_update.php
+
+msgid "Updated!"
+
+msgstr "מעודכן!"
+
+
+
+# /inc/admin.php
+
+msgid "Error. Please try again later."
+
+msgstr "שגיאה. בבקשה נסה שוב מאוחר יותר."
+
+
+
+# /inc/admin.php
+
+msgid "Accessibility Settings"
+
+msgstr "הגדרות תוסף נגישות"
+
+
+
+# /inc/admin.php
+
+msgid "Settings successfully changed"
+
+msgstr "השינוי בוצע בהצלחה"
+
+
+
+# /inc/admin.php
+
+msgid "Show for PC"
+
+msgstr "להציג בדסקטופ"
+
+
+
+# /inc/admin.php
+
+msgid "Show for mobile devices"
+
+msgstr "להציג במובייל"
+
+
+
+# /inc/admin.php
+
+msgid "Save settings"
+
+msgstr "שמירת שינויים"
+
+
+
+# /inc/admin.php
+
+msgid "Visibility"
+
+msgstr "נראות"
+
+
+
+# /inc/admin.php
+
+msgid "Tools"
+
+msgstr "כלים"
+
+
+
+# /inc/admin.php
+
+msgid "Style"
+
+msgstr "סגנון"
+
+
+
+# /inc/admin.php
+
+msgid "Position (PC)"
+
+msgstr "מיקום מחשבים (PC)"
+
+
+
+# /inc/admin.php
+
+msgid "Position (Mobile)"
+
+msgstr "מיקום בניידים (Mobile)"
+
+
+
+# /inc/admin.php
+
+msgid "Top"
+
+msgstr "להציג בחלק העליון"
+
+
+
+# /inc/admin.php
+
+msgid "Middle"
+
+msgstr "להציג במרכז העמוד"
+
+
+
+# /inc/admin.php
+
+msgid "Bottom"
+
+msgstr "להציג בחלק התחתון"
+
+
+
+# /inc/admin.php
+
+msgid "Button"
+
+msgstr "כפתור"
+
+
+
+# /inc/admin.php
+
+msgid "Icon"
+
+msgstr "סמל"
+
+
+
+# /inc/admin.php
+
+msgid "Popup"
+
+msgstr "חלון קופץ"
+
+
+
+# /inc/admin.php
+
+msgid "Text"
+
+msgstr "טקסט"
+
+
+
+# /inc/admin.php
+
+msgid "Links"
+
+msgstr "קישורים"
+
+
+
+# ---------------------------------------------------------------
+
+
+
+# /inc/frontend.php
+
+msgid "Briefly unavailable for scheduled maintenance. Check back in a minute."
+
+msgstr "מתבצעות עבודות תחזוקה, נסה מאוחר יותר."
+
+
+
+# /inc/frontend.php
+
+msgid "Accessibility tools"
+
+msgstr "כלי נגישות"
+
+
+
+# /inc/frontend.php
+
+msgid "Increase text"
+
+msgstr "הגדל טקסט"
+
+
+
+# /inc/frontend.php
+
+msgid "Decrease text"
+
+msgstr "הקטן טקסט"
+
+
+
+# /inc/frontend.php
+
+msgid "Grayscale"
+
+msgstr "גווני אפור"
+
+
+
+# /inc/frontend.php
+
+msgid "High contrast"
+
+msgstr "ניגודיות גבוהה"
+
+
+
+# /inc/frontend.php
+
+msgid "Reverse contrast"
+
+msgstr "ניגודיות הפוכה"
+
+
+
+# /inc/frontend.php
+
+msgid "Light background"
+
+msgstr "רקע בהיר"
+
+
+
+# /inc/frontend.php
+
+msgid "Highlight links"
+
+msgstr "הדגשת קישורים"
+
+
+
+# /inc/frontend.php
+
+msgid "Enable readability"
+
+msgstr "פונט קריא"
+
+
+
+# /inc/frontend.php
+
+msgid "Readability"
+
+msgstr "פונט קריא"
+
+
+
+# /inc/frontend.php
+
+msgid "White cursor"
+
+msgstr "סמן גדול"
+
+
+
+# /inc/frontend.php
+
+msgid "Black cursor"
+
+msgstr "סמן שחור"
+
+
+
+# /inc/frontend.php
+
+msgid "Reset"
+
+msgstr "איפוס"

@@ -1,0 +1,197 @@
+@font-face {
+  font-family: "PloniRegularAAA";
+  src: url("../fonts/ploni-regular-aaa.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+body.wp-admin .wmacs-form-wr {
+  font-family: "PloniRegularAAA";
+  font-weight: 400;
+  padding: 30px 20px;
+}
+body.wp-admin .wmacs-form-tt {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+body.wp-admin .wmacs-form-success {
+  padding: 10px;
+  border: 1px solid #00adff;
+  color: #00adff;
+  margin-bottom: 30px;
+  font-size: 14px;
+  display: inline-block;
+}
+body.wp-admin .wmacs-settings-form * {
+  outline: none;
+}
+body.wp-admin .wmacs-group-tt {
+  font-weight: 600;
+  margin-bottom: 21px;
+  font-size: 15px;
+}
+body.wp-admin .wmacs-fields-wr {
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d9d9d9;
+}
+body.wp-admin .wmacs-fields-wr.-compact {
+  max-width: 800px;
+  display: -moz-flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+body.wp-admin .wmacs-fields-wr.-compact .wmacs-settings-field {
+  width: 100%;
+  margin-right: 20px;
+}
+body.wp-admin .wmacs-fields-wr.-compact .wmacs-settings-field:not(.-color) {
+  max-width: 180px;
+  margin-bottom: 18px;
+}
+body.wp-admin .wmacs-fields-wr.-compact .wmacs-settings-field:not(.-color) label {
+  position: relative;
+  top: 3px;
+}
+body.wp-admin .wmacs-fields-wr.-compact .wmacs-settings-field.-color {
+  margin-right: 70px;
+  margin-bottom: 43px;
+}
+[dir=rtl] body.wp-admin .wmacs-fields-wr.-compact .wmacs-settings-field {
+  margin-right: 0;
+  margin-left: 20px;
+}
+[dir=rtl] body.wp-admin .wmacs-fields-wr.-compact .wmacs-settings-field:not(.-color) {
+  max-width: 260px;
+}
+body.wp-admin .wmacs-settings-field {
+  margin-bottom: 20px;
+}
+body.wp-admin .wmacs-settings-field.-color {
+  max-width: 80px;
+  margin-right: 70px;
+}
+body.wp-admin .wmacs-settings-field.-color label {
+  display: block;
+  margin-bottom: 6px;
+}
+body.wp-admin .wmacs-settings-field.-color input {
+  display: none;
+}
+body.wp-admin .wmacs-settings-field.-radio {
+  max-width: 90px;
+}
+body.wp-admin .wmacs-settings-field input:not([type=submit]):not([type=checkbox]):not([type=radio]) {
+  width: 100%;
+  padding: 0 5px;
+}
+body.wp-admin .wmacs-settings-field input[type=checkbox] {
+  margin-top: 2px;
+  width: 21px;
+  height: 21px;
+  border: 1px solid #C0C0C0;
+  background: #F0F0F1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+body.wp-admin .wmacs-settings-field input[type=checkbox]:checked::before {
+  content: "";
+  height: 13px;
+  width: 13px;
+  margin: 0;
+  border-radius: 2.476px;
+  background: #116FFF;
+}
+body.wp-admin .wmacs-settings-field input[type=radio] {
+  margin-top: 2px;
+  width: 21px;
+  height: 21px;
+  border: 1px solid #C0C0C0;
+  background: #F0F0F1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+body.wp-admin .wmacs-settings-field input[type=radio]:checked::before {
+  content: "";
+  height: 11px;
+  width: 11px;
+  margin: 0;
+  border-radius: 50%;
+  background: #116FFF;
+}
+body.wp-admin .wmacs-settings-field label {
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 127.978%;
+}
+body.wp-admin .wmacs-settings-field-label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+body.wp-admin .wmacs-form-submit {
+  cursor: pointer;
+  min-width: 219px;
+  height: 56px;
+  border: none;
+  border-radius: 4px;
+  background: #116FFF;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+body.wp-admin .wmacs-form-submit:hover {
+  background: #008acc;
+}
+body.wp-admin .plugins #wemake-acs-update .notice > p {
+  display: none;
+}
+body.wp-admin .plugins #wemake-acs-update .notice > p.update-text {
+  display: block;
+}
+body.wp-admin .plugins #wemake-acs-update.updated .notice > p {
+  display: none;
+}
+body.wp-admin .plugins #wemake-acs-update.updated .notice > p.update-success-text {
+  display: block;
+}
+body.wp-admin .plugins #wemake-acs-update.updating-message .notice > p {
+  display: none;
+}
+body.wp-admin .plugins #wemake-acs-update.updating-message .notice > p.update-active-text {
+  display: block;
+}
+body.wp-admin .sp-replacer {
+  border-radius: 50px;
+  border: 1px solid #C0C0C0;
+  background: #F0F0F1;
+  padding: 4px 13px 4px 4px;
+}
+body.wp-admin .sp-preview {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  margin-right: 12px;
+  border: 1px solid #C0C0C0;
+}
+body.wp-admin .sp-preview-inner {
+  border-radius: 50%;
+}
+body.wp-admin .sp-dd {
+  padding: 5px 0 2px;
+}
+/*# sourceMappingURL=admin.css.map */

@@ -1,0 +1,92 @@
+=transition($s)
+  transition: all $s ease-in-out
+  -webkit-transition: all $s ease-in-out
+  -moz-transition: all $s ease-in-out
+  -ms-transition: all $s ease-in-out
+  -o-transition: all $s ease-in-out
+
+=box-shadow($a)
+  -moz-box-shadow: $a
+  -webkit-box-shadow: $a
+  box-shadow: $a
+
+=border-radius($r)
+  -moz-border-radius: $r
+  -webkit-border-radius: $r
+  -khtml-border-radius: $r
+  border-radius: $r
+
+=placeholder-color($c)
+  &::-webkit-input-placeholder
+    color: $c
+  &:-moz-placeholder
+    color: $c
+  &::-moz-placeholder
+    color: $c
+  &:-ms-input-placeholder
+    color: $c
+
+=rotate($d)
+  -ms-transform: rotate($d)
+  -webkit-transform: rotate($d)
+  transform: rotate($d)
+
+=flex()
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flexbox
+  display: -webkit-box
+  display: flex
+
+=inline-flex()
+  display: -webkit-inline-flex
+  display: -moz-inline-box
+  display: -ms-inline-flexbox
+  display: -webkit-inline-flex
+  display: inline-flex
+
+=flex-direction($d)
+  -webkit-flex-direction: $d
+  -moz-flex-direction: $d
+  -ms-flex-direction: $d
+  flex-direction: $d
+
+=flex-justify-content($p1, $p2)
+  -webkit-box-pack: $p1
+  -webkit-justify-content: $p2
+  -ms-flex-pack: $p1
+  justify-content: $p2
+
+=flex-wrap($p)
+  -webkit-flex-wrap: $p
+  -ms-flex-wrap: $p
+  flex-wrap: $p
+
+=flex-align-items($p)
+  -webkit-box-align: $p
+  -webkit-align-items: $p
+  -ms-flex-align: $p
+  align-items: $p
+
+=flex-align-content($p)
+  -webkit-align-content: $p
+  -ms-flex-line-pack: $p
+  align-content: $p
+
+=flex-grow($p)
+  -webkit-box-flex: $p
+  -webkit-flex-grow: $p
+  -ms-flex-positive: $p
+  flex-grow: $p
+
+=flex-shrink($p)
+  -webkit-flex-shrink: $p
+  -ms-flex-negative: $p
+  flex-shrink: $p
+
+=filter($p)
+  -webkit-filter: $p
+  -moz-filter: $p
+  -o-filter: $p
+  -ms-filter: $p
+  filter: $p

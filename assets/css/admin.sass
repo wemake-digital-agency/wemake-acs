@@ -1,0 +1,166 @@
+@import mixins
+
+@font-face
+  font-family: 'PloniRegularAAA'
+  src: url('../fonts/ploni-regular-aaa.woff') format('woff')
+  font-style: normal
+  font-weight: normal
+
+body.wp-admin
+  .wmacs-form-wr
+    font-family: 'PloniRegularAAA'
+    font-weight: 400
+    padding: 30px 20px
+  .wmacs-form-tt
+    font-size: 26px
+    margin-bottom: 25px
+    font-weight: 400
+  .wmacs-form-success
+    padding: 10px
+    border: 1px solid #00adff
+    color: #00adff
+    margin-bottom: 30px
+    font-size: 14px
+    display: inline-block
+  .wmacs-settings-form
+    *
+      outline: none
+  .wmacs-group-tt
+    font-weight: 600
+    margin-bottom: 21px
+    font-size: 15px
+  .wmacs-fields-wr
+    margin-bottom: 30px
+    padding-bottom: 10px
+    border-bottom: 1px solid #d9d9d9
+    &.-compact
+      max-width: 800px
+      +flex
+      +flex-wrap(wrap)
+      .wmacs-settings-field
+        width: 100%
+        margin-right: 20px
+        &:not(.-color)
+          max-width: 180px
+          margin-bottom: 18px
+          label
+            position: relative
+            top: 3px
+        &.-color
+          margin-right: 70px
+          margin-bottom: 43px
+        [dir="rtl"] &
+          margin-right: 0
+          margin-left: 20px
+          &:not(.-color)
+            max-width: 260px
+  .wmacs-settings-field
+    margin-bottom: 20px
+    &.-color
+      max-width: 80px
+      margin-right: 70px
+      label
+        display: block
+        margin-bottom: 6px
+      input
+        display: none
+    &.-radio
+      max-width: 90px
+    input:not([type="submit"]):not([type="checkbox"]):not([type="radio"])
+      width: 100%
+      padding: 0 5px
+    input[type="checkbox"]
+      margin-top: 2px
+      width: 21px
+      height: 21px
+      border: 1px solid #C0C0C0
+      background: #F0F0F1
+      display: inline-flex
+      justify-content: center
+      align-items: center
+      &:checked
+        &::before
+          content: ''
+          height: 13px
+          width: 13px
+          margin: 0
+          border-radius: 2.476px
+          background: #116FFF
+    input[type=radio]
+      margin-top: 2px
+      width: 21px
+      height: 21px
+      border: 1px solid #C0C0C0
+      background: #F0F0F1
+      display: inline-flex
+      justify-content: center
+      align-items: center
+      &:checked
+        &::before
+          content: ''
+          height: 11px
+          width: 11px
+          margin: 0
+          border-radius: 50%
+          background: #116FFF
+    label
+      color: #000
+      font-size: 14px
+      font-weight: 400
+      line-height: 127.978%
+  .wmacs-settings-field-label
+    font-size: 16px
+    font-weight: 600
+    margin-bottom: 10px
+    display: inline-block
+  .wmacs-form-submit
+    cursor: pointer
+    min-width: 219px
+    height: 56px
+    border: none
+    border-radius: 4px
+    background: #116FFF
+    color: #fff
+    font-size: 16px
+    font-weight: 400
+    line-height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    +transition(0.3s)
+    &:hover
+      background: darken(#00adff, 10%)
+  .plugins #wemake-acs-update
+    .notice > p
+      display: none
+      &.update-text
+        display: block
+    &.updated .notice
+      >p
+        display: none
+        &.update-success-text
+          display: block
+    &.updating-message .notice
+      >p
+        display: none
+        &.update-active-text
+          display: block
+  // .sp-palette-container
+  //   max-width: 43px
+
+  .sp-replacer
+    border-radius: 50px
+    border: 1px solid #C0C0C0
+    background: #F0F0F1
+    padding: 4px 13px 4px 4px
+  .sp-preview
+    width: 25px
+    height: 25px
+    border-radius: 50%
+    border: none
+    margin-right: 12px
+    border: 1px solid #C0C0C0
+  .sp-preview-inner
+    border-radius: 50%
+  .sp-dd
+    padding: 5px 0 2px

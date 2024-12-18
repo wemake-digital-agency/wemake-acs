@@ -1,0 +1,431 @@
+@import mixins
+
+@font-face
+  font-family: 'acs-icons'
+  src: url('../fonts/acs-icons.eot?huw0s7')
+  src: url('../fonts/acs-icons.eot?huw0s7#iefix') format('embedded-opentype'), url('../fonts/acs-icons.ttf?huw0s7') format('truetype'), url('../fonts/acs-icons.woff?huw0s7') format('woff'), url('../fonts/acs-icons.svg?huw0s7#icomoon') format('svg')
+  font-weight: normal
+  font-style: normal
+  font-display: block
+
+[class^="acs-icon-"], [class*=" acs-icon-"], [class^="acs-icon-"] i, [class*=" acs-icon-"] i
+  font-style: normal !important
+
+[class^="acs-icon-"], [class*=" acs-icon-"]
+  /* use !important to prevent issues with browser extensions that change fonts
+  //speak: none
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  text-transform: none
+  line-height: 1
+  /* Better Font Rendering ===========
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  &,&:before,i:before
+    font-family: 'acs-icons' !important
+
+@font-face
+  font-family: 'icomoon'
+  src: url('../fonts/icomoon.eot?9snh7m')
+  src: url('../fonts/icomoon.eot?9snh7m#iefix') format("embedded-opentype"), url('../fonts/icomoon.ttf?9snh7m') format("truetype"), url('../fonts/icomoon.woff?9snh7m') format("woff"), url('../fonts/icomoon.svg?9snh7m#icomoon') format("svg")
+  font-weight: normal
+  font-style: normal
+  font-display: block
+
+[class^="icon-"], [class*=" icon-"]
+  /* use !important to prevent issues with browser extensions that change fonts
+  font-family: 'icomoon' !important
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  text-transform: none
+  line-height: 1
+
+  /* Better Font Rendering ===========
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+
+.acs-icon-accessible:before
+  content: "\e900"
+
+.acs-icon-active:before
+  content: "\e901"
+
+.acs-icon-clear:before
+  content: "\e902"
+
+.acs-icon-cursor:before
+  content: "\e903"
+
+.acs-icon-cursor-b:before
+  content: "\e904"
+
+.acs-icon-filter_b_and_w:before
+  content: "\e905"
+
+.acs-icon-invert_colors:before
+  content: "\e906"
+
+.acs-icon-link:before
+  content: "\e907"
+
+.acs-icon-palette:before
+  content: "\e908"
+
+.acs-icon-visibility:before
+  content: "\e909"
+
+.acs-icon-wb_sunny:before
+  content: "\e90a"
+
+.acs-icon-zoom_in:before
+  content: "\e90b"
+
+.acs-icon-zoom_out:before
+  content: "\e90c"
+
+.icon-vector1
+  cursor: pointer
+.icon-vector1:before
+  content: "\e900"
+  font-size: 16px
+
+.icon-vector2:before
+  content: "\e901"
+
+.icon-vector3:before
+  content: "\e902"
+
+.icon-vector4:before
+  content: "\e903"
+  font-size: 29px
+
+.icon-vector5:before
+  content: "\e904"
+
+.icon-vector6:before
+  content: "\e905"
+
+.icon-vector7:before
+  content: "\e906"
+
+.icon-vector8:before
+  content: "\e907"
+
+.icon-vector9
+  .path1:before
+    content: "\e908"
+    font-size: 23px
+
+  .path2:before
+    content: "\e909"
+    margin-left: -1em
+    font-size: 23px
+
+.icon-vector10:before
+  content: "\e90a"
+
+.icon-vector11
+  display: flex
+
+.icon-vector11:before
+  content: "\e90b"
+  font-size: 10px
+
+.icon-vector12:before
+  content: "\e90c"
+
+.icon-vector13:before
+  content: "\e90d"
+
+.icon-vector:before
+  font-size: 20px
+
+body
+  &.acs-cursor-w
+    cursor: url(../img/cursor-w-default.png), auto !important
+    a,.acs-button
+      cursor: url(../img/cursor-w-pointer.png), auto !important
+  &.acs-cursor-b
+    cursor: url(../img/cursor-b-default.png), auto !important
+    a,.acs-button
+      cursor: url(../img/cursor-b-pointer.png), auto !important
+  &.wmacs-tab a:focus
+    outline: auto
+    outline-style: solid
+    outline-color: #ff9e00
+  &.acs-grayscale *
+    +filter(grayscale(100%))
+  &.acs-contrast *, &.acs-contrast-negative *
+    -webkit-user-select: text !important
+    -moz-user-select: text !important
+    -ms-user-select: text !important
+    user-select: text !important
+    -webkit-box-shadow: none !important
+    box-shadow: none !important
+    text-shadow: none !important
+    //-moz-appearance: none !important
+  &.acs-contrast
+    background-color: #000 !important
+    a, div:not(.add-review):not(.review-sent):not([class*=filter]):not([class*=switch]), footer, form, header, li, main, nav, ul
+      background-color: #000 !important
+    h1, h2, h3, h4, h5, h6, p
+      color: #40c090 !important
+      background-color: #000 !important
+    a, li, span, ul
+      color: #0080ff !important
+    div
+      color: #fff !important
+    button, div.filter-category-item
+      background-color: #600040 !important
+    input, label, strong
+      color: #ff0 !important
+    input, textarea
+      border-bottom: 1px solid #ff0 !important
+    img
+      opacity: 1 !important
+      background-color: grey !important
+      -webkit-filter: none !important
+      filter: none !important
+  &.acs-contrast-negative
+    color: #fff !important
+    background-color: #000 !important
+    a, div:not(.add-review):not(.review-sent):not([class*=filter]):not([class*=switch]), footer, form, header, li, main, nav, ul
+      color: #fff !important
+      background-color: #000 !important
+    h1, h2, h3, h4, h5, h6, p
+      color: #fff !important
+      background-color: #000 !important
+    a, li, span, ul
+      color: #ff0 !important
+    div
+      color: #fff !important
+    button, div.filter-category-item
+      color: #ff0 !important
+      border: 1px solid #fff !important
+      background-color: #000 !important
+    input, label, strong
+      color: #ff0 !important
+    input, textarea
+      border-bottom: 1px solid #ff0 !important
+    img
+      opacity: 1 !important
+      -webkit-filter: none !important
+      filter: none !important
+    .acs-wemake
+      svg 
+        path
+          fill: #fff !important
+  &.acs-contrast-light
+    color: #000 !important
+    background-color: transparent !important
+    \:not(#wemake-acs):not([class*=acs]):not(header):not([class*=filter-]):not([class*=switch]):not([class*=mejs]):not([type=button]), header
+      color: #000 !important
+      background-color: transparent !important
+  &.acs-links a
+    text-decoration: underline !important
+    *
+      text-decoration: underline !important
+  &.acs-fonts
+    font-family: Verdana, Arial, Helvetica, sans-serif !important
+    font-weight: 600 !important
+    \:not(span)
+      font-family: Verdana, Arial, Helvetica, sans-serif !important
+      font-weight: 600 !important
+    [lang="en-US"] &
+      #wemake-acs
+        width: 358px
+
+.acs-title-block
+  padding-bottom: 12px
+  border-bottom: 1px solid #333
+  display: flex
+  justify-content: space-between
+  align-items: center
+.acs-title
+  color: #2E2E2E
+  font-size: 24px
+  font-weight: 700
+  line-height: 127.978%
+
+.acs-wemake
+  color: #8B8B8B
+  font-size: 10px
+  font-weight: 400
+  line-height: 127.978%
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 2px
+  a
+    color: #0089cb
+
+#wemake-acs
+  line-height: initial
+  position: fixed
+  top: 150px
+  left: 0
+  display: block
+  width: 358px
+  height: auto
+  -webkit-transform: translateX(-100.5%)
+  -ms-transform: translateX(-100.5%)
+  transform: translateX(-100.5%)
+  z-index: 9999
+  padding: 12px 24px 18px
+  -webkit-transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1)
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1)
+  -webkit-border-radius: 6px
+  border-radius: 6px
+  border-top: 8px solid #116FFF
+  background-color: #EFF1F5
+  box-sizing: border-box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  [dir="rtl"] &
+    width: 358px
+  &,*
+    direction: ltr
+    text-align: left
+  [dir="rtl"] &
+    &,*
+      direction: rtl
+      text-align: right
+  &.active
+    left: 0
+    -webkit-transform: translateX(0)
+    -ms-transform: translateX(0)
+    transform: translateX(0)
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37)
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37)
+    
+  @media all and (min-width: 769px)
+    &.-pos-pc-mid
+      top: 50%
+      margin-top: -160px
+    &.-pos-pc-bot
+      top: auto
+      bottom: 100px
+      .acs-button
+        top: auto
+        bottom: 0
+  @media all and (max-width: 768px)
+    &.-pos-mob-mid
+      top: 50%
+      margin-top: -160px
+    &.-pos-mob-bot
+      top: auto
+      bottom: 50px
+      .acs-button
+        top: auto
+        bottom: 0
+  hr
+    margin-top: 5px
+    margin-bottom: 5px
+  .acs-icon-cursor-b
+    font-size: 17px
+    text-align: center
+
+.acs-button
+  position: absolute
+  top: -8px
+  right: -54px
+  width: 52px
+  height: 52px
+  cursor: pointer
+  color: #000
+  border-radius: 4.199px
+  background: #116FFF
+  display: flex
+  justify-content: center
+  align-items: center
+  i
+    font-size: 27px
+    position: absolute
+    top: 50%
+    left: 50%
+    -webkit-transform: translateX(-50%) translateY(-50%)
+    -ms-transform: translateX(50%) translateY(-50%)
+    transform: translateX(-50%) translateY(-50%)
+
+.acs-overlay
+  margin: 0 0 19px
+
+ul.acs-items
+  padding-top: 25px
+  list-style: none
+  font-size: initial
+  display: flex
+  flex-wrap: wrap
+  gap: 10px
+  li
+    padding: 0
+    margin: 0
+    display: block
+    min-width: 150px
+    height: 71px
+    border-radius: 5px
+    background: #FFF
+    &:last-of-type
+      width: 100%
+      height: 47px
+      background: #116FFF
+      .acs-link 
+        color: #FFF
+        flex-direction: row
+        justify-content: center
+
+.acs-link
+  color: #5F6368
+  font-size: 16px
+  font-weight: 400
+  line-height: 127.978%
+  padding: 8px
+  width: 100%
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  flex-direction: column
+  gap: 7px
+  >i
+    width: 21px
+    text-align: center
+    font-size: 21px
+    vertical-align: middle
+  &.active
+    border: 1px solid #116FFF
+    box-shadow: 3px 4px 14.2px 0px #CCDCF5
+    color: #116FFF
+    font-weight: 700
+    position: relative
+    border-radius: 5px
+    &::before
+      content: ''
+      position: absolute
+      width: 11px
+      height: 11px
+      top: 10px
+      right: 10px
+      background: url('../img/select.svg') no-repeat
+      background-size: contain
+  &.active:after
+    display: block
+    font-family: acs-icons !important
+    margin-left: 10px
+    //@extend .acs-icon-active:before
+    [dir="rtl"] &
+      margin-left: 0
+      margin-right: 10px
+
+@media all and (min-width: 769px)
+  #wemake-acs:not(.show-for-pc)
+    display: none !important
+
+@media all and (max-width: 768px)
+  #wemake-acs
+    top: 110px
+    &:not(.show-for-mob)
+      display: none !important
