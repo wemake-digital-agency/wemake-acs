@@ -40,7 +40,7 @@ add_action('wp_enqueue_scripts', function(){
 
 
 
-});
+}, 20);
 
 
 
@@ -293,7 +293,7 @@ function wmacs_frontend(){
 
         </div>
 
-        <p class="acs-wemake">
+        <div class="acs-wemake">
             <a href="https://www.wemake.co.il/" target="_blank" class="acs-powered" alt="wemake digital" title="wemake digital">
                 <svg xmlns="http://www.w3.org/2000/svg" width="94" height="14" viewBox="0 0 76 11" fill="none">
                 <circle cx="74.3826" cy="6.61205" r="1.59594" fill="#116FFF"/>
@@ -313,7 +313,7 @@ function wmacs_frontend(){
                 </svg>
             </a>
             - Powered by
-        </p>
+        </div>
 
 
 

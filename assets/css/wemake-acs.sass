@@ -259,8 +259,10 @@ body
   justify-content: center
   align-items: center
   gap: 2px
+  direction: rtl!important
   a
     color: #0089cb
+    display: contents
 
 #wemake-acs
   line-height: initial
@@ -354,7 +356,8 @@ body
   margin: 0 0 19px
 
 ul.acs-items
-  padding-top: 25px
+  //padding-top: 25px
+  padding: 25px 0 0 0
   list-style: none
   font-size: initial
   display: flex
@@ -402,6 +405,7 @@ ul.acs-items
     font-weight: 700
     position: relative
     border-radius: 5px
+    letter-spacing: -0.3px
     &::before
       content: ''
       position: absolute
