@@ -95,7 +95,7 @@ jQuery(function($){
 
 
         zoomElements = $(
-        "body, h1, h2, h3, h4, h5, h6, p, li, a, span,label, ol, strong, b, i, del, ins, sup, sub, small, mark, div, div.icon-item_text, .fr-text"
+        "body, h1, h2, h3, h4, h5, h6, p, li, a, span,label, ol, strong, b, i, del, ins, sup, sub, small, mark, div.icon-item_text, .fr-text"
     ).not("#wemake-plg-acs-frontend *"),
 
 
