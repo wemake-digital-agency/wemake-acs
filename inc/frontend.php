@@ -94,30 +94,30 @@ function wmacs_frontend(){
 
     ?>
 
-    <div id="wemake-acs" class="<?php echo implode(' ', $classes); ?>">
+    <div id="wemake-plg-acs-frontend" class="<?php echo implode(' ', $classes); ?>">
 
 
 
-        <div class="acs-button"><span class="icon-vector4"></span></div>
+        <div class="wm-plg-acs-button"><span class="wm-i-v4 icon-vector4"></span></div>
 
-        <div class="acs-overlay">
-            <div class="acs-title-block">
-                <div class="acs-title">
+        <div class="wm-plg-acs-overlay">
+            <div class="wm-plg-acs-title-block">
+                <div class="wm-plg-acs-title">
 
                     <?php _e('Accessibility tools', WMACS_PLUGIN_SLUG); ?>
 
                 </div>
-                <span class="icon-vector1"></span>
+                <span class="wm-i-v1 icon-vector1"></span>
             </div>
-            <ul class="acs-items">
+            <ul class="wm-plg-acs-items">
 
                 <?php if(empty($default_options_set) || !empty(get_option('wmacs_increase_text'))){ ?>
 
-                    <li class="acs">
+                    <li class="wm-plg-acs-item">
 
-                        <a href="#" class="acs-link" data-action="zoomIn">
+                        <a href="#" class="wm-plg-acs-link-item" data-action="zoomIn">
 
-                            <span class="icon-vector12 icon-vector"></span>
+                            <span class="wm-i-v12 icon-vector12 icon-vector"></span>
 
                             <?php _e('Increase text', WMACS_PLUGIN_SLUG); ?>
 
@@ -129,11 +129,11 @@ function wmacs_frontend(){
 
                 <?php if(empty($default_options_set) || !empty(get_option('wmacs_decrease_text'))){ ?>
 
-                    <li class="acs">
+                    <li class="wm-plg-acs-item">
 
-                        <a href="#" class="acs-link" data-action="zoomOut">
+                        <a href="#" class="wm-plg-acs-link-item" data-action="zoomOut">
 
-                            <span class="icon-vector13 icon-vector"></span>
+                            <span class="wm-i-v13 icon-vector13 icon-vector"></span>
 
                             <?php _e('Decrease text', WMACS_PLUGIN_SLUG); ?>
 
@@ -145,11 +145,11 @@ function wmacs_frontend(){
 
                 <?php if(empty($default_options_set) || !empty(get_option('wmacs_grayscale'))){ ?>
 
-                    <li class="acs">
+                    <li class="wm-plg-acs-item">
 
-                        <a href="#" class="acs-link" data-action="grayscale">
+                        <a href="#" class="wm-plg-acs-link-item" data-action="grayscale">
 
-                            <span class="icon-vector9"><span class="path1"></span><span class="path2"></span></span>
+                            <span class="wm-i-v9 icon-vector9"><span class="path1"></span><span class="path2"></span></span>
 
                             <?php _e('Grayscale', WMACS_PLUGIN_SLUG); ?>
 
@@ -161,11 +161,11 @@ function wmacs_frontend(){
 
                 <?php if(empty($default_options_set) || !empty(get_option('wmacs_high_contrast'))){ ?>
 
-                    <li class="acs">
+                    <li class="wm-plg-acs-item">
 
-                        <a href="#" class="acs-link" data-action="contrast">
+                        <a href="#" class="wm-plg-acs-link-item" data-action="contrast">
 
-                            <span class="icon-vector2 icon-vector"></span>
+                            <span class="wm-i-v2 icon-vector2 icon-vector"></span>
 
                             <?php _e('High contrast', WMACS_PLUGIN_SLUG); ?>
 
@@ -177,11 +177,11 @@ function wmacs_frontend(){
 
                 <?php if(empty($default_options_set) || !empty(get_option('wmacs_highlight_links'))){ ?>
 
-                    <li class="acs">
+                    <li class="wm-plg-acs-item">
 
-                        <a href="#" class="acs-link" data-action="links">
+                        <a href="#" class="wm-plg-acs-link-item" data-action="links">
 
-                            <span class="icon-vector10 icon-vector"></span>
+                            <span class="wm-i-v10 icon-vector10 icon-vector"></span>
 
                             <?php _e('Highlight links', WMACS_PLUGIN_SLUG); ?>
 
@@ -193,11 +193,11 @@ function wmacs_frontend(){
 
                 <?php if(empty($default_options_set) || !empty(get_option('wmacs_enable_readability'))){ ?>
 
-                    <li class="acs">
+                    <li class="wm-plg-acs-item">
 
-                        <a href="#" class="acs-link" data-action="fonts">
+                        <a href="#" class="wm-plg-acs-link-item" data-action="fonts">
 
-                            <span class="icon-vector5 icon-vector"></span>
+                            <span class="wm-i-v5 icon-vector5 icon-vector"></span>
 
                             <?php _e('Enable readability', WMACS_PLUGIN_SLUG); ?>
 
@@ -209,11 +209,11 @@ function wmacs_frontend(){
 
                 <?php if(empty($default_options_set) || !empty(get_option('wmacs_white_cursor'))){ ?>
 
-                    <li class="acs">
+                    <li class="wm-plg-acs-item">
 
-                        <a href="#" class="acs-link" data-action="cursor-w">
+                        <a href="#" class="wm-plg-acs-link-item" data-action="cursor-w">
 
-                            <span class="icon-vector6 icon-vector"></span>
+                            <span class="wm-i-v6 icon-vector6 icon-vector"></span>
 
                             <?php _e('White cursor', WMACS_PLUGIN_SLUG); ?>
 
@@ -225,11 +225,11 @@ function wmacs_frontend(){
 
                 <?php if(empty($default_options_set) || !empty(get_option('wmacs_black_cursor'))){ ?>
 
-                    <li class="acs">
+                    <li class="wm-plg-acs-item">
 
-                        <a href="#" class="acs-link" data-action="cursor-b">
+                        <a href="#" class="wm-plg-acs-link-item" data-action="cursor-b">
 
-                            <span class="icon-vector7 icon-vector"></span>
+                            <span class="wm-i-v7 icon-vector7 icon-vector"></span>
 
                             <?php _e('Black cursor', WMACS_PLUGIN_SLUG); ?>
 
@@ -241,11 +241,11 @@ function wmacs_frontend(){
 
                 <?php if(empty($default_options_set) || !empty(get_option('wmacs_reverse_contrast'))){ ?>
 
-                    <li class="acs">
+                    <li class="wm-plg-acs-item">
 
-                        <a href="#" class="acs-link" data-action="contrast-negative">
+                        <a href="#" class="wm-plg-acs-link-item" data-action="contrast-negative">
 
-                            <span class="icon-vector8 icon-vector"></span>
+                            <span class="wm-i-v8 icon-vector8 icon-vector"></span>
 
                             <?php _e('Reverse contrast', WMACS_PLUGIN_SLUG); ?>
 
@@ -257,11 +257,11 @@ function wmacs_frontend(){
 
                 <?php if(empty($default_options_set) || !empty(get_option('wmacs_light_background'))){ ?>
 
-                    <li class="acs">
+                    <li class="wm-plg-acs-item">
 
-                        <a href="#" class="acs-link" data-action="contrast-light">
+                        <a href="#" class="wm-plg-acs-link-item" data-action="contrast-light">
  
-                            <span class="icon-vector3 icon-vector"></span>
+                            <span class="wm-i-v3 icon-vector3 icon-vector"></span>
 
                             <?php _e('Light background', WMACS_PLUGIN_SLUG); ?>
 
@@ -277,13 +277,13 @@ function wmacs_frontend(){
 
                 
 
-                <li class="acs">
+                <li class="wm-plg-acs-item">
 
-                    <a href="#" class="acs-link" data-action="clear">
+                    <a href="#" class="wm-plg-acs-link-item" data-action="clear">
 
                         <?php _e('Reset', WMACS_PLUGIN_SLUG); ?>
 
-                        <span class="icon-vector11"></span>
+                        <span class="wm-i-v11 icon-vector11"></span>
 
                     </a>
 
@@ -293,8 +293,8 @@ function wmacs_frontend(){
 
         </div>
 
-        <div class="acs-wemake">
-            <a href="https://www.wemake.co.il/" target="_blank" class="acs-powered" alt="wemake digital" title="wemake digital">
+        <div class="wm-plg-acs-wemake-powered-wrapper">
+            <a href="https://www.wemake.co.il/" target="_blank" class="wm-plg-acs-powered" alt="wemake digital" title="wemake digital">
                 <svg xmlns="http://www.w3.org/2000/svg" width="94" height="14" viewBox="0 0 76 11" fill="none">
                 <circle cx="74.3826" cy="6.61205" r="1.59594" fill="#116FFF"/>
                 <path d="M36.8838 5.47368C36.8838 3.86265 38.1406 2.5144 39.7859 2.5144C41.2599 2.5144 42.6767 3.58843 42.7338 5.35942C42.7338 5.55366 42.7224 5.72505 42.6995 5.87358H38.0835C38.1749 6.71909 38.8604 7.32466 39.7859 7.32466C40.4144 7.32466 40.86 7.07329 41.157 6.75337L42.4938 6.76479C42.0025 7.74741 40.9742 8.41011 39.8202 8.41011C38.1749 8.41011 36.8838 7.09614 36.8838 5.47368ZM38.0835 4.95952H41.5341C41.3284 4.18257 40.6429 3.59985 39.8202 3.59985C38.929 3.59985 38.2892 4.18257 38.0835 4.95952Z" fill="#2F2F2F"/>
@@ -361,13 +361,15 @@ function wmacs_wp_head_custom_style(){
 
         <?php if(!empty(get_option('wmacs_set_default_options'))){ ?>
 
-            html #wemake-acs{ background: <?php esc_html_e(get_option('wmacs_popup_color')); ?>; }
+            html #wemake-plg-acs-frontend{ background: <?php esc_html_e(get_option('wmacs_popup_color')); ?>; }
 
-            html .acs-button{ background: <?php esc_html_e(get_option('wmacs_button_color')); ?>; color: <?php echo get_option('wmacs_icon_color'); ?>; }
+            html .wm-plg-acs-button{ background: <?php esc_html_e(get_option('wmacs_button_color')); ?>; color: <?php echo get_option('wmacs_icon_color'); ?>; }
 
-            html .acs-title, html .acs-wemake{ color: <?php esc_html_e(get_option('wmacs_text_color')); ?>; }
+            html .wm-plg-acs-title, html .wm-plg-acs-wemake-powered-wrapper{ color: <?php esc_html_e(get_option('wmacs_text_color')); ?>; }
 
-            html .acs-link, html .acs-powered{ color: <?php esc_html_e(get_option('wmacs_link_color')); ?>; }
+            html .wm-plg-acs-link-item, html .wm-plg-acs-powered{ color: <?php esc_html_e(get_option('wmacs_link_color')); ?>; }
+
+            html .wm-plg-acs-link-item:hover, html .wm-plg-acs-powered:hover{ color: <?php esc_html_e(get_option('wmacs_link_color')); ?>; }
 
         <?php } ?>
 

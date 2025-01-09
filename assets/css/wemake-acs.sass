@@ -86,35 +86,36 @@
 .acs-icon-zoom_out:before
   content: "\e90c"
 
-.icon-vector1
+.wm-i-v1.icon-vector1
   cursor: pointer
-.icon-vector1:before
+.wm-i-v1.icon-vector1:before
   content: "\e900"
   font-size: 16px
+  color: #2E2E2E
 
-.icon-vector2:before
+.wm-i-v2.icon-vector2:before
   content: "\e901"
 
-.icon-vector3:before
+.wm-i-v3.icon-vector3:before
   content: "\e902"
 
-.icon-vector4:before
+.wm-i-v4.icon-vector4:before
   content: "\e903"
   font-size: 29px
 
-.icon-vector5:before
+.wm-i-v5.icon-vector5:before
   content: "\e904"
 
-.icon-vector6:before
+.wm-i-v6.icon-vector6:before
   content: "\e905"
 
-.icon-vector7:before
+.wm-i-v7.icon-vector7:before
   content: "\e906"
 
-.icon-vector8:before
+.wm-i-v8.icon-vector8:before
   content: "\e907"
 
-.icon-vector9
+.wm-i-v9.icon-vector9
   .path1:before
     content: "\e908"
     font-size: 23px
@@ -124,33 +125,33 @@
     margin-left: -1em
     font-size: 23px
 
-.icon-vector10:before
+.wm-i-v10.icon-vector10:before
   content: "\e90a"
 
-.icon-vector11
+.wm-i-v11.icon-vector11
   display: flex
 
-.icon-vector11:before
+.wm-i-v11.icon-vector11:before
   content: "\e90b"
   font-size: 10px
 
-.icon-vector12:before
+.wm-i-v12.icon-vector12:before
   content: "\e90c"
 
-.icon-vector13:before
+.wm-i-v13.icon-vector13:before
   content: "\e90d"
 
 .icon-vector:before
   font-size: 20px
 
 body
-  &.acs-cursor-w
+  &.wm-plg-acs-cursor-w
     cursor: url(../img/cursor-w-default.png), auto !important
-    a,.acs-button
+    a,.wm-plg-acs-button
       cursor: url(../img/cursor-w-pointer.png), auto !important
-  &.acs-cursor-b
+  &.wm-plg-acs-cursor-b
     cursor: url(../img/cursor-b-default.png), auto !important
-    a,.acs-button
+    a,.wm-plg-acs-button
       cursor: url(../img/cursor-b-pointer.png), auto !important
   &.wmacs-tab a:focus
     outline: auto
@@ -158,7 +159,7 @@ body
     outline-color: #ff9e00
   &.acs-grayscale *
     +filter(grayscale(100%))
-  &.acs-contrast *, &.acs-contrast-negative *
+  &.wm-plg-acs-contrast *, &.wm-plg-acs-contrast-negative *
     -webkit-user-select: text !important
     -moz-user-select: text !important
     -ms-user-select: text !important
@@ -167,7 +168,7 @@ body
     box-shadow: none !important
     text-shadow: none !important
     //-moz-appearance: none !important
-  &.acs-contrast
+  &.wm-plg-acs-contrast
     background-color: #000 !important
     a, div:not(.add-review):not(.review-sent):not([class*=filter]):not([class*=switch]), footer, form, header, li, main, nav, ul
       background-color: #000 !important
@@ -189,7 +190,7 @@ body
       background-color: grey !important
       -webkit-filter: none !important
       filter: none !important
-  &.acs-contrast-negative
+  &.wm-plg-acs-contrast-negative
     color: #fff !important
     background-color: #000 !important
     a, div:not(.add-review):not(.review-sent):not([class*=filter]):not([class*=switch]), footer, form, header, li, main, nav, ul
@@ -214,14 +215,14 @@ body
       opacity: 1 !important
       -webkit-filter: none !important
       filter: none !important
-    .acs-wemake
+    .wm-plg-acs-wemake-powered-wrapper
       svg 
         path
           fill: #fff !important
-  &.acs-contrast-light
+  &.wm-plg-acs-contrast-light
     color: #000 !important
     background-color: transparent !important
-    \:not(#wemake-acs):not([class*=acs]):not(header):not([class*=filter-]):not([class*=switch]):not([class*=mejs]):not([type=button]), header
+    \:not(#wemake-plg-acs-frontend):not([class*=acs]):not(header):not([class*=filter-]):not([class*=switch]):not([class*=mejs]):not([type=button]), header
       color: #000 !important
       background-color: transparent !important
   &.acs-links a
@@ -235,22 +236,22 @@ body
       font-family: Verdana, Arial, Helvetica, sans-serif !important
       font-weight: 600 !important
     [lang="en-US"] &
-      #wemake-acs
+      #wemake-plg-acs-frontend
         width: 358px
 
-.acs-title-block
+.wm-plg-acs-title-block
   padding-bottom: 12px
   border-bottom: 1px solid #333
   display: flex
   justify-content: space-between
   align-items: center
-.acs-title
+.wm-plg-acs-title
   color: #2E2E2E
   font-size: 24px
   font-weight: 700
   line-height: 127.978%
 
-.acs-wemake
+.wm-plg-acs-wemake-powered-wrapper
   color: #8B8B8B
   font-size: 10px
   font-weight: 400
@@ -264,7 +265,7 @@ body
     color: #0089cb
     display: contents
 
-#wemake-acs
+#wemake-plg-acs-frontend
   line-height: initial
   position: fixed
   top: 150px
@@ -286,6 +287,7 @@ body
   box-sizing: border-box
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
+  font-size: initial!important
   [dir="rtl"] &
     width: 358px
   &,*
@@ -310,7 +312,7 @@ body
     &.-pos-pc-bot
       top: auto
       bottom: 100px
-      .acs-button
+      .wm-plg-acs-button
         top: auto
         bottom: 0
   @media all and (max-width: 768px)
@@ -320,7 +322,7 @@ body
     &.-pos-mob-bot
       top: auto
       bottom: 50px
-      .acs-button
+      .wm-plg-acs-button
         top: auto
         bottom: 0
   hr
@@ -330,7 +332,7 @@ body
     font-size: 17px
     text-align: center
 
-.acs-button
+.wm-plg-acs-button
   position: absolute
   top: -8px
   right: -54px
@@ -352,10 +354,10 @@ body
     -ms-transform: translateX(50%) translateY(-50%)
     transform: translateX(-50%) translateY(-50%)
 
-.acs-overlay
+.wm-plg-acs-overlay
   margin: 0 0 19px
 
-ul.acs-items
+ul.wm-plg-acs-items
   //padding-top: 25px
   padding: 25px 0 0 0
   list-style: none
@@ -375,24 +377,26 @@ ul.acs-items
       width: 100%
       height: 47px
       background: #116FFF
-      .acs-link 
+      .wm-plg-acs-link-item
         color: #FFF
         flex-direction: row
         justify-content: center
 
-.acs-link
+.wm-plg-acs-link-item
   color: #5F6368
   font-size: 16px
   font-weight: 400
-  line-height: 127.978%
-  padding: 8px
+  line-height: 1
+  //line-height: 127.978%
+  //padding: 8px
   width: 100%
   height: 100%
   display: flex
   align-items: center
-  justify-content: flex-end
+  justify-content: center
   flex-direction: column
-  gap: 7px
+  gap: 10px
+  border: 1px solid transparent
   >i
     width: 21px
     text-align: center
@@ -425,11 +429,11 @@ ul.acs-items
       margin-right: 10px
 
 @media all and (min-width: 769px)
-  #wemake-acs:not(.show-for-pc)
+  #wemake-plg-acs-frontend:not(.show-for-pc)
     display: none !important
 
 @media all and (max-width: 768px)
-  #wemake-acs
+  #wemake-plg-acs-frontend
     top: 110px
     &:not(.show-for-mob)
       display: none !important

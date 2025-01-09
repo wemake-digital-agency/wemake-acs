@@ -6,15 +6,15 @@ jQuery(function($){
 
 
 
-    $(document).on("click", ".acs-button", function (){
+    $(document).on("click", ".wm-plg-acs-button", function (){
 
-        $("#wemake-acs").toggleClass("active");
+        $("#wemake-plg-acs-frontend").toggleClass("active");
 
     });
 
-    $(document).on("click", ".icon-vector1", function (){
+    $(document).on("click", ".wm-i-v1.icon-vector1", function (){
 
-        $("#wemake-acs").removeClass("active");
+        $("#wemake-plg-acs-frontend").removeClass("active");
 
     });
 
@@ -23,7 +23,7 @@ jQuery(function($){
 
 
 
-        let acsMenu = $("#wemake-acs"),
+        let acsMenu = $("#wemake-plg-acs-frontend"),
 
             callPp = $(".call-popup");
 
@@ -93,7 +93,13 @@ jQuery(function($){
 
         body = $("body"),
 
-        zoomElements = $("body,h1,h2,h3,h4,h5:not('.acs-title'),h6:not('.acs-title'),p:not('.acs-wemake'),li:not('.acs'),a:not('.acs-link'):not(.acs-powered):not(.wm-poweredby-logo),span,div.icon-item_text,.fr-text"),
+
+        zoomElements = $(
+        "body, h1, h2, h3, h4, h5, h6, p, li, a, span,label, ol, strong, b, i, del, ins, sup, sub, small, mark, div, div.icon-item_text, .fr-text"
+    ).not("#wemake-plg-acs-frontend *"),
+
+
+    // zoomElements = $("body,h1,h2,h3,h4,h5:not('.wm-plg-acs-title'),h6:not('.acs-title'),p:not('.wm-plg-acs-wemake-powered-wrapper'),li:not('.wm-plg-acs-item'),a:not('.wm-plg-acs-link-item'):not(.wm-plg-acs-powered):not(.wm-poweredby-logo),span,div.icon-item_text,.fr-text"),
 
         zoomStep = 1.1,
 
@@ -233,7 +239,7 @@ jQuery(function($){
 
 
 
-    $(document).on("click", ".acs-link", function (e){
+    $(document).on("click", ".wm-plg-acs-link-item", function (e){
 
 
 
@@ -255,7 +261,7 @@ jQuery(function($){
 
                 body.removeClass("acs-zoom");
 
-                $(".acs-link").removeClass("active");
+                $(".wm-plg-acs-link-item").removeClass("active");
 
                 break;
 
@@ -269,7 +275,7 @@ jQuery(function($){
 
                 $(this).addClass("active");
 
-                $(".acs-link[data-action='zoomOut']").removeClass("active");
+                $(".wm-plg-acs-link-item[data-action='zoomOut']").removeClass("active");
 
                 break;
 
@@ -283,7 +289,7 @@ jQuery(function($){
 
                 $(this).addClass("active");
 
-                $(".acs-link[data-action='zoomIn']").removeClass("active");
+                $(".wm-plg-acs-link-item[data-action='zoomIn']").removeClass("active");
 
                 break;
 
@@ -295,49 +301,49 @@ jQuery(function($){
 
                 if(acsAction!=="contrast"){
 
-                    body.removeClass("acs-contrast");
+                    body.removeClass("wm-plg-acs-contrast");
 
-                    $(".acs-link[data-action='contrast']").removeClass("active");
+                    $(".wm-plg-acs-link-item[data-action='contrast']").removeClass("active");
 
                 }
 
                 if(acsAction!=="contrast-negative"){
 
-                    body.removeClass("acs-contrast-negative");
+                    body.removeClass("wm-plg-acs-contrast-negative");
 
-                    $(".acs-link[data-action='contrast-negative']").removeClass("active");
+                    $(".wm-plg-acs-link-item[data-action='contrast-negative']").removeClass("active");
 
                 }
 
                 if(acsAction!=="contrast-light"){
 
-                    body.removeClass("acs-contrast-light");
+                    body.removeClass("wm-plg-acs-contrast-light");
 
-                    $(".acs-link[data-action='contrast-light']").removeClass("active");
+                    $(".wm-plg-acs-link-item[data-action='contrast-light']").removeClass("active");
 
                 }
 
-                body.toggleClass("acs-" + acsAction);
+                body.toggleClass("wm-plg-acs-" + acsAction);
 
                 break;
 
             case "cursor-w":
 
-                body.removeClass("acs-cursor-b");
+                body.removeClass("wm-plg-acs-cursor-b");
 
-                body.toggleClass("acs-cursor-w");
+                body.toggleClass("wm-plg-acs-cursor-w");
 
-                $(".acs-link[data-action='cursor-b']").removeClass("active");
+                $(".wm-plg-acs-link-item[data-action='cursor-b']").removeClass("active");
 
                 break;
 
             case "cursor-b":
 
-                body.removeClass("acs-cursor-w");
+                body.removeClass("wm-plg-acs-cursor-w");
 
-                body.toggleClass("acs-cursor-b");
+                body.toggleClass("wm-plg-acs-cursor-b");
 
-                $(".acs-link[data-action='cursor-w']").removeClass("active");
+                $(".wm-plg-acs-link-item[data-action='cursor-w']").removeClass("active");
 
                 break;
 
@@ -455,7 +461,7 @@ jQuery(function($){
 
                 acs_body_class[ii] = acs_body_class[ii].replace(/acs-/, "");
 
-                $(".acs-link[data-action=" + acs_body_class[ii] + "]").addClass("active");
+                $(".wm-plg-acs-link-item[data-action=" + acs_body_class[ii] + "]").addClass("active");
 
             }
 
