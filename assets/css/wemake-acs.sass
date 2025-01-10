@@ -216,7 +216,7 @@ body
       -webkit-filter: none !important
       filter: none !important
     .wm-plg-acs-wemake-powered-wrapper
-      svg 
+      svg
         path
           fill: #fff !important
   &.wm-plg-acs-contrast-light
@@ -225,6 +225,8 @@ body
     \:not(#wemake-plg-acs-frontend):not([class*=acs]):not(header):not([class*=filter-]):not([class*=switch]):not([class*=mejs]):not([type=button]), header
       color: #000 !important
       background-color: transparent !important
+    video.acs-contrast-light-video
+      filter: invert(1) grayscale(1)
   &.wm-plg-acs-links a
     text-decoration: underline !important
     *
@@ -304,7 +306,7 @@ body
     transform: translateX(0)
     -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37)
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37)
-    
+
   @media all and (min-width: 769px)
     &.-pos-pc-mid
       top: 50%
@@ -402,6 +404,9 @@ ul.wm-plg-acs-items
     text-align: center
     font-size: 21px
     vertical-align: middle
+  &:focus
+    box-shadow: unset
+    border: unset
   &.active
     border: 1px solid #116FFF
     box-shadow: 3px 4px 14.2px 0px #CCDCF5

@@ -323,6 +323,12 @@ jQuery(function($){
 
                 }
 
+                if (acsAction === "contrast-light") {
+                    setClassContrastLightVideoTags();
+                } else {
+                    $('video').removeClass('acs-contrast-light-video');
+                }
+
                 body.toggleClass("wm-plg-acs-" + acsAction);
 
                 break;
@@ -458,6 +464,10 @@ jQuery(function($){
                 const element = $(".wm-plg-acs-link-item[data-action='" + acs_body_class[ii] + "']");
                 if (element.length)  element.addClass("active");
             }
+
+            if (acs_body_class.includes('contrast-light')) {
+                setClassContrastLightVideoTags();
+            }
         }
 
 
@@ -471,12 +481,22 @@ jQuery(function($){
             });
 
         }
-
-
-
     }
 
+    function setClassContrastLightVideoTags() {
+        const videos = $('video');
+        const screenWidth = $(window).width();
 
+        if(videos.length){
+           videos.each(function (){
+               const video = $(this);
+               const videoWidth = video.outerWidth();
+               if (videoWidth === screenWidth) {
+                   $(this).addClass('acs-contrast-light-video');
+               }
+           })
+        }
+    }
 
     // Tab button press
 
