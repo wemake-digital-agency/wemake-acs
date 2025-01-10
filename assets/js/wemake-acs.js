@@ -127,7 +127,7 @@ jQuery(function($){
 
             zoomInArray = [];
 
-            body.addClass("acs-" + acsAction);
+            body.addClass("wm-plg-acs-" + acsAction);
 
 
 
@@ -177,7 +177,7 @@ jQuery(function($){
 
             zoomOutArray = [];
 
-            body.removeAcsClass(/acs-zoom/);
+            body.removeAcsClass(/wm-plg-acs-zoom/);
 
 
 
@@ -257,9 +257,9 @@ jQuery(function($){
 
                 zoomReset();
 
-                body.removeAcsClass(/acs-/);
+                body.removeAcsClass(/wm-plg-acs-/);
 
-                body.removeClass("acs-zoom");
+                body.removeClass("wm-plg-acs-zoom");
 
                 $(".wm-plg-acs-link-item").removeClass("active");
 
@@ -269,9 +269,9 @@ jQuery(function($){
 
                 zoomIn();
 
-                body.addClass("acs-zoom acs-zoomIn");
+                body.addClass("wm-plg-acs-zoom wm-plg-acs-zoomIn");
 
-                body.removeClass("acs-zoomOut");
+                body.removeClass("wm-plg-acs-zoomOut");
 
                 $(this).addClass("active");
 
@@ -283,9 +283,9 @@ jQuery(function($){
 
                 zoomOut();
 
-                body.addClass("acs-zoom acs-zoomOut");
+                body.addClass("wm-plg-acs-zoom wm-plg-acs-zoomOut");
 
-                body.removeClass("acs-zoomIn");
+                body.removeClass("wm-plg-acs-zoomIn");
 
                 $(this).addClass("active");
 
@@ -351,7 +351,7 @@ jQuery(function($){
 
                 // Add class to the body tag
 
-                body.toggleClass("acs-" + acsAction);
+                body.toggleClass("wm-plg-acs-" + acsAction);
 
         }
 
@@ -393,7 +393,7 @@ jQuery(function($){
 
                     }
 
-                    if(body_class[ii]==="acs-zoom"){
+                    if(body_class[ii]==="wm-plg-acs-zoom"){
 
                         zoom = true;
 
@@ -448,25 +448,16 @@ jQuery(function($){
 
 
         if(acs_body_class!==null){
-
-
-
             body.addClass(acs_body_class);
 
             acs_body_class = acs_body_class.split(" ");
 
-
-
             for(let ii=0;ii<acs_body_class.length;ii++){
+                acs_body_class[ii] = acs_body_class[ii].replace(/wm-plg-acs-/, "");
 
-                acs_body_class[ii] = acs_body_class[ii].replace(/acs-/, "");
-
-                $(".wm-plg-acs-link-item[data-action=" + acs_body_class[ii] + "]").addClass("active");
-
+                const element = $(".wm-plg-acs-link-item[data-action='" + acs_body_class[ii] + "']");
+                if (element.length)  element.addClass("active");
             }
-
-
-
         }
 
 
