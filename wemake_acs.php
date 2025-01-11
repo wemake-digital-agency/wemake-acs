@@ -62,9 +62,9 @@ define("WMACS_PLUGIN_SLUG", 'wemake-acs');
 
 define("WMACS_PLUGIN_VERSION", '1.53');
 
-define("WMACS_ABSPATH", dirname( __FILE__ ));
+define("WMACS_ABSPATH", dirname(__FILE__));
 
-define("WMACS_URI", plugins_url().'/'.WMACS_PLUGIN_SLUG);
+define("WMACS_URI", plugins_url() . '/' . WMACS_PLUGIN_SLUG);
 
 define("WMACS_AJAX_DEBUG", true);
 
@@ -74,18 +74,16 @@ define("WMACS_AJAX_DEBUG", true);
 
 
 
-if(version_compare(phpversion(), '5.6.40', '<')){
+if (version_compare(phpversion(), '5.6.40', '<')) {
 
-    add_action('admin_notices', function(){
+    add_action('admin_notices', function () {
 
-        $message = 'Your server is running PHP version '.phpversion().' but '.WMACS_PLUGIN_NAME.' requires at least 5.6.40. The plugin does not work.';
+        $message = 'Your server is running PHP version ' . phpversion() . ' but ' . WMACS_PLUGIN_NAME . ' requires at least 5.6.40. The plugin does not work.';
 
-        printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr('notice notice-error'), esc_html( $message ) );
-
+        printf('<div class="%1$s"><p>%2$s</p></div>', esc_attr('notice notice-error'), esc_html($message));
     });
 
     return false;
-
 }
 
 
@@ -102,10 +100,9 @@ require_once(WMACS_ABSPATH . '/inc/functions.php');
 
 
 
-if(isset($_GET['action']) && (function_exists('wp_doing_ajax') &&  wp_doing_ajax() || defined('DOING_AJAX'))){
+if (isset($_GET['action']) && (function_exists('wp_doing_ajax') &&  wp_doing_ajax() || defined('DOING_AJAX'))) {
 
     require_once(WMACS_ABSPATH . '/inc/action.php');
-
 }
 
 
@@ -114,10 +111,9 @@ if(isset($_GET['action']) && (function_exists('wp_doing_ajax') &&  wp_doing_ajax
 
 
 
-add_action('init', function(){
+add_action('init', function () {
 
     wmacs_load_textdomain();
-
 });
 
 
@@ -126,21 +122,13 @@ add_action('init', function(){
 
 
 
-add_action("wp_loaded", function(){
+add_action("wp_loaded", function () {
 
-    if(is_admin() || is_multisite() && is_network_admin()){
+    if (is_admin() || is_multisite() && is_network_admin()) {
 
         require_once(WMACS_ABSPATH . '/inc/admin.php');
-
-    }else{
+    } else {
 
         require_once(WMACS_ABSPATH . '/inc/frontend.php');
-
     }
-
-},20);
-
-
-
-?>
-
+}, 20);
