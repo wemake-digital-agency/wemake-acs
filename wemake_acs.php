@@ -8,7 +8,7 @@ Description: Wemake Accessibility plugin
 
 Plugin URI: http://wemake.co.il
 
-Version: 1.54
+Version: 1.55
 
 Author: Wemake Team
 
@@ -20,7 +20,7 @@ License: GPL2
 
 /*
 
-Copyright 2025  wemake Team  (email : ibra@wemake.co.il)
+Copyright 2025  wemake Team  (email : max@wemake.co.il)
 
 
 
@@ -60,7 +60,7 @@ define("WMACS_PLUGIN_NAME", 'Wemake Accessibility');
 
 define("WMACS_PLUGIN_SLUG", 'wemake-acs');
 
-define("WMACS_PLUGIN_VERSION", '1.54');
+define("WMACS_PLUGIN_VERSION", '1.55');
 
 define("WMACS_ABSPATH", dirname(__FILE__));
 
