@@ -8,23 +8,6 @@
   font-style: normal
   font-display: block
 
-[class^="acs-icon-"], [class*=" acs-icon-"], [class^="acs-icon-"] i, [class*=" acs-icon-"] i
-  font-style: normal !important
-
-[class^="acs-icon-"], [class*=" acs-icon-"]
-  /* use !important to prevent issues with browser extensions that change fonts
-  //speak: none
-  font-style: normal
-  font-weight: normal
-  font-variant: normal
-  text-transform: none
-  line-height: 1
-  /* Better Font Rendering ===========
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
-  &,&:before,i:before
-    font-family: 'acs-icons' !important
-
 @font-face
   font-family: 'icomoon'
   src: url('../fonts/icomoon.eot?9snh7m')
@@ -33,132 +16,165 @@
   font-style: normal
   font-display: block
 
-[class^="icon-"], [class*=" icon-"]
-  /* use !important to prevent issues with browser extensions that change fonts
-  font-family: 'icomoon' !important
-  font-style: normal
-  font-weight: normal
-  font-variant: normal
-  text-transform: none
-  line-height: 1
+#wemake-plg-acs-frontend
+  [class^="acs-icon-"], [class*=" acs-icon-"], [class^="acs-icon-"] i, [class*=" acs-icon-"] i
+    font-style: normal !important
 
-  /* Better Font Rendering ===========
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
+  [class^="acs-icon-"], [class*=" acs-icon-"]
+    /* use !important to prevent issues with browser extensions that change fonts
+    //speak: none
+    font-style: normal
+    font-weight: normal
+    font-variant: normal
+    text-transform: none
+    line-height: 1
+    /* Better Font Rendering ===========
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
 
+    &, &:before, i:before
+      font-family: 'acs-icons' !important
 
-.acs-icon-accessible:before
-  content: "\e900"
+  [class^="icon-"], [class*=" icon-"]
+    /* use !important to prevent issues with browser extensions that change fonts
+    font-family: 'icomoon' !important
+    font-style: normal
+    font-weight: normal
+    font-variant: normal
+    text-transform: none
+    line-height: 1
 
-.acs-icon-active:before
-  content: "\e901"
+    /* Better Font Rendering ===========
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    &, &:before, i:before
+      font-family: 'icomoon' !important
+      font-style: normal
+      font-weight: normal
+      font-variant: normal
+      text-transform: none
+      line-height: 1
 
-.acs-icon-clear:before
-  content: "\e902"
+  .acs-icon-accessible:before
+    content: "\e900"
 
-.acs-icon-cursor:before
-  content: "\e903"
+  .acs-icon-active:before
+    content: "\e901"
 
-.acs-icon-cursor-b:before
-  content: "\e904"
+  .acs-icon-clear:before
+    content: "\e902"
 
-.acs-icon-filter_b_and_w:before
-  content: "\e905"
+  .acs-icon-cursor:before
+    content: "\e903"
 
-.acs-icon-invert_colors:before
-  content: "\e906"
+  .acs-icon-cursor-b:before
+    content: "\e904"
 
-.acs-icon-link:before
-  content: "\e907"
+  .acs-icon-filter_b_and_w:before
+    content: "\e905"
 
-.acs-icon-palette:before
-  content: "\e908"
+  .acs-icon-invert_colors:before
+    content: "\e906"
 
-.acs-icon-visibility:before
-  content: "\e909"
+  .acs-icon-link:before
+    content: "\e907"
 
-.acs-icon-wb_sunny:before
-  content: "\e90a"
-
-.acs-icon-zoom_in:before
-  content: "\e90b"
-
-.acs-icon-zoom_out:before
-  content: "\e90c"
-
-.wm-i-v1.icon-vector1
-  cursor: pointer
-.wm-i-v1.icon-vector1:before
-  content: "\e900"
-  font-size: 16px
-  color: #2E2E2E
-
-.wm-i-v2.icon-vector2:before
-  content: "\e901"
-
-.wm-i-v3.icon-vector3:before
-  content: "\e902"
-
-.wm-i-v4.icon-vector4:before
-  content: "\e903"
-  font-size: 29px
-
-.wm-i-v5.icon-vector5:before
-  content: "\e904"
-
-.wm-i-v6.icon-vector6:before
-  content: "\e905"
-
-.wm-i-v7.icon-vector7:before
-  content: "\e906"
-
-.wm-i-v8.icon-vector8:before
-  content: "\e907"
-
-.wm-i-v9.icon-vector9
-  .path1:before
+  .acs-icon-palette:before
     content: "\e908"
-    font-size: 23px
 
-  .path2:before
+  .acs-icon-visibility:before
     content: "\e909"
-    margin-left: -1em
-    font-size: 23px
 
-.wm-i-v10.icon-vector10:before
-  content: "\e90a"
+  .acs-icon-wb_sunny:before
+    content: "\e90a"
 
-.wm-i-v11.icon-vector11
-  display: flex
+  .acs-icon-zoom_in:before
+    content: "\e90b"
 
-.wm-i-v11.icon-vector11:before
-  content: "\e90b"
-  font-size: 10px
+  .acs-icon-zoom_out:before
+    content: "\e90c"
 
-.wm-i-v12.icon-vector12:before
-  content: "\e90c"
+  .wm-i-v1.icon-vector1
+    cursor: pointer
 
-.wm-i-v13.icon-vector13:before
-  content: "\e90d"
+  .wm-i-v1.icon-vector1:before
+    content: "\e900"
+    font-size: 16px
+    color: #2E2E2E
 
-.icon-vector:before
-  font-size: 20px
+  .wm-i-v2.icon-vector2:before
+    content: "\e901"
 
+  .wm-i-v3.icon-vector3:before
+    content: "\e902"
+
+  .wm-i-v4.icon-vector4:before
+    content: "\e903"
+    font-size: 29px
+
+  .wm-i-v5.icon-vector5:before
+    content: "\e904"
+
+  .wm-i-v6.icon-vector6:before
+    content: "\e905"
+
+  .wm-i-v7.icon-vector7:before
+    content: "\e906"
+
+  .wm-i-v8.icon-vector8:before
+    content: "\e907"
+
+  .wm-i-v9.icon-vector9
+    .path1:before
+      content: "\e908"
+      font-size: 23px
+
+    .path2:before
+      //content: "\e909"
+      //margin-left: -1em
+      //font-size: 23px
+
+  .wm-i-v10.icon-vector10:before
+    content: "\e90a"
+
+  .wm-i-v11.icon-vector11
+    display: flex
+
+  .wm-i-v11.icon-vector11:before
+    content: "\e90b"
+    font-size: 10px
+
+  .wm-i-v12.icon-vector12:before
+    content: "\e90c"
+
+  .wm-i-v13.icon-vector13:before
+    content: "\e90d"
+
+  .icon-vector:before
+    font-size: 20px
+
+    
 body
   &.wm-plg-acs-cursor-w
     cursor: url(../img/cursor-w-default.png), auto !important
-    a,.wm-plg-acs-button
+
+    a, .wm-plg-acs-button
       cursor: url(../img/cursor-w-pointer.png), auto !important
+
   &.wm-plg-acs-cursor-b
     cursor: url(../img/cursor-b-default.png), auto !important
-    a,.wm-plg-acs-button
+
+    a, .wm-plg-acs-button
       cursor: url(../img/cursor-b-pointer.png), auto !important
+
   &.wmacs-tab a:focus
     outline: auto
     outline-style: solid
     outline-color: #ff9e00
+
   &.wm-plg-acs-grayscale *
     +filter(grayscale(100%))
+
   &.wm-plg-acs-contrast *, &.wm-plg-acs-contrast-negative *
     -webkit-user-select: text !important
     -moz-user-select: text !important
@@ -167,76 +183,102 @@ body
     -webkit-box-shadow: none !important
     box-shadow: none !important
     text-shadow: none !important
-    //-moz-appearance: none !important
+  //-moz-appearance: none !important
   &.wm-plg-acs-contrast
     background-color: #000 !important
+
     a, div:not(.add-review):not(.review-sent):not([class*=filter]):not([class*=switch]), footer, form, header, li, main, nav, ul
       background-color: #000 !important
+
     h1, h2, h3, h4, h5, h6, p
       color: #40c090 !important
       background-color: #000 !important
+
     a, li, span, ul
       color: #0080ff !important
+
     div
       color: #fff !important
+
     button, div.filter-category-item
       background-color: #600040 !important
+
     input, label, strong
       color: #ff0 !important
+
     input, textarea
       border-bottom: 1px solid #ff0 !important
+
     img
       opacity: 1 !important
       background-color: grey !important
       -webkit-filter: none !important
       filter: none !important
+
   &.wm-plg-acs-contrast-negative
     color: #fff !important
     background-color: #000 !important
+
     a, div:not(.add-review):not(.review-sent):not([class*=filter]):not([class*=switch]), footer, form, header, li, main, nav, ul
       color: #fff !important
       background-color: #000 !important
+
     h1, h2, h3, h4, h5, h6, p
       color: #fff !important
       background-color: #000 !important
+
     a, li, span, ul
       color: #ff0 !important
+
     div
       color: #fff !important
+
     button, div.filter-category-item
       color: #ff0 !important
       border: 1px solid #fff !important
       background-color: #000 !important
+
     input, label, strong
       color: #ff0 !important
+
     input, textarea
       border-bottom: 1px solid #ff0 !important
+
     img
       opacity: 1 !important
       -webkit-filter: none !important
       filter: none !important
+
     .wm-plg-acs-wemake-powered-wrapper
       svg
         path
           fill: #fff !important
+
   &.wm-plg-acs-contrast-light
     color: #000 !important
     background-color: transparent !important
+
     \:not(#wemake-plg-acs-frontend):not([class*=acs]):not(header):not([class*=filter-]):not([class*=switch]):not([class*=mejs]):not([type=button]), header
       color: #000 !important
       background-color: transparent !important
+
     video.acs-contrast-light-video
       filter: invert(1) grayscale(1)
+
   &.wm-plg-acs-links a
     text-decoration: underline !important
+
     *
       text-decoration: underline !important
+
   &.wm-plg-acs-fonts
     font-family: Verdana, Arial, Helvetica, sans-serif !important
     font-weight: 600 !important
+
     \:not(span)
       font-family: Verdana, Arial, Helvetica, sans-serif !important
       font-weight: 600 !important
+
     [lang="en-US"] &
       #wemake-plg-acs-frontend
         width: 358px
@@ -247,6 +289,7 @@ body
   display: flex
   justify-content: space-between
   align-items: center
+
 .wm-plg-acs-title
   color: #2E2E2E
   font-size: 24px
@@ -262,7 +305,8 @@ body
   justify-content: center
   align-items: center
   gap: 2px
-  direction: rtl!important
+  direction: rtl !important
+
   a
     color: #0089cb
     display: contents
@@ -289,16 +333,20 @@ body
   box-sizing: border-box
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
-  font-size: initial!important
+  font-size: initial !important
+
   [dir="rtl"] &
     width: 358px
-  &,*
+
+  &, *
     direction: ltr
     text-align: left
+
   [dir="rtl"] &
-    &,*
+    &, *
       direction: rtl
       text-align: right
+
   &.active
     left: 0
     -webkit-transform: translateX(0)
@@ -314,6 +362,7 @@ body
     &.-pos-pc-bot
       top: auto
       bottom: 100px
+
       .wm-plg-acs-button
         top: auto
         bottom: 0
@@ -324,12 +373,15 @@ body
     &.-pos-mob-bot
       top: auto
       bottom: 50px
+
       .wm-plg-acs-button
         top: auto
         bottom: 0
+
   hr
     margin-top: 5px
     margin-bottom: 5px
+
   .acs-icon-cursor-b
     font-size: 17px
     text-align: center
@@ -347,6 +399,7 @@ body
   display: flex
   justify-content: center
   align-items: center
+
   i
     font-size: 27px
     position: absolute
@@ -367,6 +420,7 @@ ul.wm-plg-acs-items
   display: flex
   flex-wrap: wrap
   gap: 10px
+
   li
     padding: 0
     margin: 0
@@ -375,10 +429,12 @@ ul.wm-plg-acs-items
     height: 71px
     border-radius: 5px
     background: #FFF
+
     &:last-of-type
       width: 100%
       height: 47px
       background: #116FFF
+
       .wm-plg-acs-link-item
         color: #FFF
         flex-direction: row
@@ -399,14 +455,17 @@ ul.wm-plg-acs-items
   flex-direction: column
   gap: 10px
   border: 1px solid transparent
-  >i
+
+  > i
     width: 21px
     text-align: center
     font-size: 21px
     vertical-align: middle
+
   &:focus
     box-shadow: unset
     border: unset
+
   &.active
     border: 1px solid #116FFF
     box-shadow: 3px 4px 14.2px 0px #CCDCF5
@@ -415,6 +474,7 @@ ul.wm-plg-acs-items
     position: relative
     border-radius: 5px
     letter-spacing: -0.3px
+
     &::before
       content: ''
       position: absolute
@@ -424,6 +484,7 @@ ul.wm-plg-acs-items
       right: 10px
       background: url('../img/select.svg') no-repeat
       background-size: contain
+
   &.active:after
     display: block
     font-family: acs-icons !important
@@ -440,5 +501,6 @@ ul.wm-plg-acs-items
 @media all and (max-width: 768px)
   #wemake-plg-acs-frontend
     top: 110px
+
     &:not(.show-for-mob)
       display: none !important
