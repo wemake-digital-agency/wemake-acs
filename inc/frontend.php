@@ -149,7 +149,10 @@ function wmacs_frontend(){
 
                         <a href="#" class="wm-plg-acs-link-item" data-action="grayscale">
 
-                            <span class="wm-i-v9 icon-vector9"><span class="path1"></span><span class="path2"></span></span>
+                            <span class="wm-i-v9 icon-vector9">
+                                <span class="path1">
+                                </span><span class="path2"></span>
+                            </span>
 
                             <?php _e('Grayscale', WMACS_PLUGIN_SLUG); ?>
 
