@@ -4,12 +4,11 @@ on:
   release:
     types: [published]
 
+permissions:
+  contents: write 
 jobs:
   build-zip:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write  # 🔐 Додай цей блок!
 
     steps:
       - name: Checkout code
@@ -22,8 +21,9 @@ jobs:
           zip -r wemake-acs.zip wemake-acs/
 
       - name: Upload release asset
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2 
         with:
+          tag_name: ${{ github.event.release.tag_name }} 
           files: wemake-acs.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
