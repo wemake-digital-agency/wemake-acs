@@ -15,16 +15,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Create plugin zip
+      - name: Create plugin zip with version in filename
         run: |
+          VERSION=${{ github.event.release.tag_name }}
           mkdir wemake-acs
           cp -r assets inc languages lib wemake_acs.php wemake-acs/
-          zip -r wemake-acs.zip wemake-acs/
+          zip -r wemake-acs-$VERSION.zip wemake-acs/
 
       - name: Upload release asset
         uses: softprops/action-gh-release@v2  
         with:
           tag_name: ${{ github.event.release.tag_name }}  
-          files: wemake-acs.zip
+          files: wemake-acs-${{ github.event.release.tag_name }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
