@@ -1,27 +1,57 @@
-name: Build ZIP on GitHub Release
+name: Update version, commit and build ZIP on Release
 
 on:
   release:
     types: [published]
 
-jobs:
-  build-and-upload:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+permissions:
+  contents: write 
 
-      - name: Move plugin files into folder and zip
+jobs:
+  update-version-commit-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Configure Git
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Update plugin version in PHP file
+        run: |
+          RAW_VERSION=${{ github.event.release.tag_name }}
+          # Залишаємо тільки цифри та крапки
+          VERSION=$(echo "$RAW_VERSION" | sed 's/[^0-9.]//g')
+
+          sed -i "s/^Version: .*/Version: $VERSION/" wemake_acs.php
+          sed -i "s/define(\"WMACS_PLUGIN_VERSION\", '.*');/define(\"WMACS_PLUGIN_VERSION\", '$VERSION');/" wemake_acs.php
+
+      - name: Commit and push changes if any
+        run: |
+          if [[ `git status --porcelain` ]]; then
+            git add wemake_acs.php
+            git commit -m "Update plugin version to $VERSION [skip ci]"
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi
+
+      - name: Create plugin zip with version in filename
+        run: |
+          VERSION=${{ github.event.release.tag_name }}
           mkdir wemake-acs
-          shopt -s extglob
-          mv !(wemake-acs) wemake-acs/
-          zip -r wemake-acs.zip wemake-acs
-        shell: bash
+          cp -r assets inc languages lib wemake_acs.php wemake-acs/
+          zip -r wemake-acs-$VERSION.zip wemake-acs/
 
       - name: Upload release asset
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v2  
         with:
-          files: wemake-acs.zip
+          tag_name: ${{ github.event.release.tag_name }}  
+          files: wemake-acs-${{ github.event.release.tag_name }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
