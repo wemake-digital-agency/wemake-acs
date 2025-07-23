@@ -1,4 +1,4 @@
-name: Build ZIP on GitHub Release
+name: Update version, commit and build ZIP on Release
 
 on:
   release:
@@ -8,12 +8,36 @@ permissions:
   contents: write 
 
 jobs:
-  build-zip:
+  update-version-commit-build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout main branch
         uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Update plugin version in PHP file
+        run: |
+          VERSION=${{ github.event.release.tag_name }}
+
+          sed -i "s/^Version: .*/Version: $VERSION/" wemake_acs.php
+          sed -i "s/define(\"WMACS_PLUGIN_VERSION\", '.*');/define(\"WMACS_PLUGIN_VERSION\", '$VERSION');/" wemake_acs.php
+
+      - name: Commit and push changes if any
+        run: |
+          if [[ `git status --porcelain` ]]; then
+            git add wemake_acs.php
+            git commit -m "Update plugin version to $VERSION [skip ci]"
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi
 
       - name: Create plugin zip with version in filename
         run: |
