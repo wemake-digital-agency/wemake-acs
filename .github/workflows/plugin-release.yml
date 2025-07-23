@@ -24,7 +24,9 @@ jobs:
 
       - name: Update plugin version in PHP file
         run: |
-          VERSION=${{ github.event.release.tag_name }}
+          RAW_VERSION=${{ github.event.release.tag_name }}
+          # Залишаємо тільки цифри та крапки
+          VERSION=$(echo "$RAW_VERSION" | sed 's/[^0-9.]//g')
 
           sed -i "s/^Version: .*/Version: $VERSION/" wemake_acs.php
           sed -i "s/define(\"WMACS_PLUGIN_VERSION\", '.*');/define(\"WMACS_PLUGIN_VERSION\", '$VERSION');/" wemake_acs.php
