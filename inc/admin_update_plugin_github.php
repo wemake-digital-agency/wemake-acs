@@ -134,8 +134,9 @@ if (!class_exists('Wemake_ACS_GitHub_Updater')) {
             $res->version = ltrim($release->tag_name, 'v');
 //            $res->tested = '6.3'; // Change to the WP version you support
             $res->tested = $wp_version;
-            $res->author = '<a href="https://github.com/wemake-digital-agency">Wemake Team</a>';
-            $res->homepage = $release->html_url;
+//            $res->author = '<a href="https://github.com/wemake-digital-agency">Wemake Team</a>';
+            $res->author = '<a target="_blank" href="https://www.wemake.co.il/">Wemake Team</a>';
+//            $res->homepage = $release->html_url;
             $res->download_link = $download_link;
             $res->sections = [
                 'description' => $this->get_plugin_description(),
