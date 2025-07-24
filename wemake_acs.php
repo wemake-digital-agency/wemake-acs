@@ -6,13 +6,13 @@ Plugin Name: Wemake ACS
 
 Description: Wemake Accessibility plugin
 
-Plugin URI: http://wemake.co.il
+Plugin URI: https://www.wemake.co.il/
 
-Version: 1.59.2
+Version: 1.59.1
 
 Author: Wemake Team
 
-Author URI: http://wemake.co.il
+Author URI: https://www.wemake.co.il/
 
 License: GPL2
 
@@ -60,7 +60,7 @@ define("WMACS_PLUGIN_NAME", 'Wemake Accessibility');
 
 define("WMACS_PLUGIN_SLUG", 'wemake-acs');
 
-define("WMACS_PLUGIN_VERSION", '1.59.2');
+define("WMACS_PLUGIN_VERSION", '1.59.1');
 
 define("WMACS_ABSPATH", dirname(__FILE__));
 
