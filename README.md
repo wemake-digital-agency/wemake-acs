@@ -45,7 +45,7 @@ Older copies reach the new version by themselves, each in its own way:
 | Installed version | How it gets the latest release |
 |---|---|
 | 1.61 - 1.62.1 | Its own GitHub updater (`inc/admin_update_plugin_github.php`, removed in 1.63) reads `releases/latest` and offers the first `.zip` asset in wp-admin; the admin clicks "Update now" (or WordPress auto-updates it). |
-| 1.45 - 1.56 | Its old updater asks `repository.wemake.co.il/update.php` from wp-admin (every 5 minutes while an admin is in wp-admin) and shows "update" under the plugin on the Plugins screen; the admin clicks it. The server offers the latest GitHub release as a zip without the top folder while `wemake-acs` is in `WM_UPDATE_FROM_GITHUB`. That updater downloads the whole zip first, then deletes the plugin files and unpacks the new ones. |
+| 1.45 - 1.56 | Its old updater asks `repository.wemake.co.il/update.php` from wp-admin (every 5 minutes while an admin is in wp-admin) and shows "update" under the plugin on the Plugins screen; the admin clicks it. The server offers the latest GitHub release as a zip without the top folder while `wemake-acs` is in `WM_UPDATE_FROM_GITHUB`. That updater downloads the whole zip first, then deletes the plugin files and unpacks the new ones; the server puts `wemake_acs.php` last in that zip, so an unpack that breaks halfway leaves no main file and WordPress skips the plugin. |
 | 1.22 and older | No updater: install by hand. |
 
 After that one step every copy is on 1.63+ and updates through the Wemake update server.
