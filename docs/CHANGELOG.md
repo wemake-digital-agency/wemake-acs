@@ -3,6 +3,14 @@
 Releases and other changes, newest on top. Every entry: What, Why, Verify, Rollback, Task.
 Versions before 1.62.1 have no entries here; see the git history.
 
+## 2026-11-25 - 1.63.1: update notice visible on the Plugins screen
+
+What: `assets/css/admin.css` and `assets/css/admin.sass`: removed the old updater's rules for `#wemake-acs-update` (`.notice > p {display: none}` and friends). Version 1.63.1.
+Why: The admin CSS loads on every wp-admin page, and WordPress gives the standard update row of this plugin the same id `wemake-acs-update`. With the old updater gone the rules hid WordPress' own text "There is a new version of Wemake ACS available ... update now", so the Plugins screen showed an empty yellow bar (seen on goosto.co.il with Tools 2.64 → 2.64.1). Dashboard > Updates and auto-updates were not affected.
+Verify: On a site with 1.63.1 installed, the next update shows "There is a new version ... update now" under the plugin on the Plugins screen. Copies on 1.63 and older still show the empty bar for this one update (their own CSS is loaded): update them from Dashboard > Updates.
+Rollback: Publish a release with the previous code and a higher version.
+Task: https://task.nexfield.day/t/1f244bcb-0313-55f0-8ec7-53ab75b7acfb
+
 ## 2026-11-25 - 1.63: updates through the Wemake update server
 
 What:
