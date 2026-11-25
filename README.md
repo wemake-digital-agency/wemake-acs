@@ -1,8 +1,19 @@
 # wemake-acs
 
-Wemake Accessibility — free WordPress accessibility plugin by Wemake.
+Wemake Accessibility - free WordPress accessibility plugin by Wemake.
 
-Sites update this plugin **from GitHub releases** of this repository. The repository is **always public** — every site that installed the plugin updates from here.
+- **Requires:** PHP 5.6.40+ (checked by the plugin).
+- The repository is **always public**: the download link below and the updates of copies 1.61-1.62.1 read its releases.
+
+This README is the living reference: download link, how updates work, releases. Source of truth is the code; update
+this file in the same change.
+
+## Docs
+
+- `README.md` (this file) - download link, updates, releases.
+- [docs/DECISIONS.md](docs/DECISIONS.md) - decisions and who made them, newest on top.
+- [docs/CHANGELOG.md](docs/CHANGELOG.md) - releases and changes with Verify and Rollback, newest on top.
+- [CLAUDE.md](CLAUDE.md) - rules for Claude in this repository.
 
 ## Download link (for users)
 
@@ -15,38 +26,48 @@ Do not link to `archive/refs/heads/main.zip`: its root folder is `wemake-acs-mai
 
 ## How updates work
 
-`inc/admin_update_plugin_github.php` checks
-`https://api.github.com/repos/wemake-digital-agency/wemake-acs/releases/latest`
-and offers an update in WP Admin when the release tag (without the leading `v`) is greater than the installed version (`version_compare(tag, current, '>')`).
-The package is the **first `.zip` asset** of the release (`wemake-acs.zip`). If a release has no zip asset, it falls back to GitHub's source zipball, which has the wrong root folder — so always check that the release has `wemake-acs.zip` attached.
+From 1.63 the plugin updates through the Wemake update server and the standard WordPress updater (Dashboard > Updates,
+the Plugins screen, WordPress auto-updates). It asks `https://repository.wemake.co.il/check.php` when WordPress reads its
+update list (at most once per 12 hours, "Check again" skips the cache); the server reads the latest GitHub release of
+this repository and returns a signed download link to `wemake-acs.zip`.
 
-Never edit plugin files directly on a site — the next update overwrites them. Fix it here and release.
+- Client: `inc/class-wemake-update-client.php` (`Wemake_Update_Client_1_0`), started in `wemake_acs.php` for every
+  request (also cron). The canonical copy lives in `wemake-digital-agency/wemake-repository` (`client/`); copy it from
+  there, don't edit it here.
+- The `Update URI` header (`wemake_acs.php`) keeps WordPress from offering a wordpress.org plugin with the same slug.
+- Nothing is replaced unless the whole zip arrived intact and holds `wemake_acs.php` with a plugin header; otherwise the
+  installed version stays. After an update the plugin keeps its installed folder name.
+- The server answers only while `wemake-acs` is in `WM_CLIENT_UPDATES` (`wemake-repository`, `public_html/inc/github.php`).
+- Sites whose host blocks outgoing requests to `repository.wemake.co.il` get no updates: install new versions there by hand.
+
+Older copies reach the new version by themselves, each in its own way:
+
+| Installed version | How it gets the latest release |
+|---|---|
+| 1.61 - 1.62.1 | Its own GitHub updater (`inc/admin_update_plugin_github.php`, removed in 1.63) reads `releases/latest` and offers the first `.zip` asset in wp-admin; the admin clicks "Update now" (or WordPress auto-updates it). |
+| 1.45 - 1.56 | Its old updater asks `repository.wemake.co.il/update.php` from wp-admin (every 5 minutes while an admin is in wp-admin) and shows "update" under the plugin on the Plugins screen; the admin clicks it. The server offers the latest GitHub release as a zip without the top folder while `wemake-acs` is in `WM_UPDATE_FROM_GITHUB`. That updater downloads the whole zip first, then deletes the plugin files and unpacks the new ones. |
+| 1.22 and older | No updater: install by hand. |
+
+After that one step every copy is on 1.63+ and updates through the Wemake update server.
+
+Never edit plugin files directly on a site: the next update overwrites them. Fix it here and release.
 
 ## Making a release
 
-1. Commit and push the change to `main`.
-2. Pick the next tag. It must be greater than the latest one, compared as versions:
-   `1.62.1` → `v1.62.2` (fix) or `v1.63` (feature).
-   Do not publish a lower number after a higher one: the newest published release becomes "Latest" and is what the download link and the updater serve.
-3. Go to [Releases](https://github.com/wemake-digital-agency/wemake-acs/releases) → **Draft a new release**:
-   - **Choose a tag** → type the new tag (e.g. `v1.63`) → *Create new tag on publish*, target `main`.
-   - **Release title**, e.g. `v1.63 — short summary`.
-   - **Release notes**: what changed and why.
-   - Keep **Set as the latest release** checked → **Publish release**.
-4. The [`plugin-release.yml`](.github/workflows/plugin-release.yml) workflow then runs automatically (watch it in [Actions](https://github.com/wemake-digital-agency/wemake-acs/actions)):
-   - sets `Version:` and `WMACS_PLUGIN_VERSION` in `wemake_acs.php` to the tag number and commits it to `main` (`Update plugin version to … [skip ci]`);
-   - builds `wemake-acs.zip` (root folder `wemake-acs/`) and attaches it to the release.
-5. Check the release page: the `wemake-acs.zip` asset is there, and the download link above returns the new version.
-6. Pull `main` locally afterwards — the workflow pushed a version commit.
+1. Bump the version in both places in `wemake_acs.php`: the `Version:` header and `WMACS_PLUGIN_VERSION`. Add an entry
+   to `docs/CHANGELOG.md`. The new number must be greater than the latest release, compared as versions
+   (`1.63` → `1.63.1` fix, `1.64` feature).
+2. Merge to `main`, then push a tag with the same version: `git tag v1.64 && git push origin v1.64`.
+   Don't create the release in the GitHub web UI: it would be public for a minute without `wemake-acs.zip`, and copies
+   1.61-1.62.1 that check in that minute fall back to GitHub's source archive (wrong folder name).
+3. The `Release` workflow (`.github/workflows/release.yml`) checks that the tag matches both versions, lints the PHP,
+   builds `wemake-acs.zip` (top folder `wemake-acs/`, plugin files only), creates the release as a draft with the zip and
+   then publishes it as the latest release.
+4. Check the release page (the `wemake-acs.zip` asset is there) and that the download link above returns the new version.
+   Sites see the update within 12 hours (plus at most one hour of server cache), or at once with "Check again".
 
-Do not bump the version in `wemake_acs.php` by hand — the workflow does it from the tag.
-
-## Updating a site
+## Updating a site by hand
 
 1. WP Admin → Plugins → **Wemake Accessibility** → *Update now* (*Dashboard → Updates → Check again* forces a check).
    Or upload `wemake-acs.zip` manually: Plugins → Add New → Upload Plugin → *Replace current with uploaded*.
 2. Clear the page cache (WP Rocket / LiteSpeed).
-
-## Changelog
-
-- **1.62.1** — Release asset is now always named `wemake-acs.zip` (was `wemake-acs-<tag>.zip`), so the permanent `releases/latest/download/wemake-acs.zip` link works. No plugin code changes.

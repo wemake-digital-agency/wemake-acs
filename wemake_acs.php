@@ -8,7 +8,7 @@ Description: Wemake Accessibility plugin
 
 Plugin URI: https://www.wemake.co.il/
 
-Version: 1.62.1
+Version: 1.63
 
 Author: Wemake Team
 
@@ -16,11 +16,13 @@ Author URI: https://www.wemake.co.il/
 
 License: GPL2
 
+Update URI: https://repository.wemake.co.il/wemake-acs
+
 */
 
 /*
 
-Copyright 2025  wemake Team  (email : max@wemake.co.il)
+Copyright 2025  wemake Team
 
 
 
@@ -60,13 +62,11 @@ define("WMACS_PLUGIN_NAME", 'Wemake Accessibility');
 
 define("WMACS_PLUGIN_SLUG", 'wemake-acs');
 
-define("WMACS_PLUGIN_VERSION", '1.62.1');
+define("WMACS_PLUGIN_VERSION", '1.63');
 
 define("WMACS_ABSPATH", dirname(__FILE__));
 
 define("WMACS_URI", plugins_url() . '/' . WMACS_PLUGIN_SLUG);
-
-define("WMACS_AJAX_DEBUG", true);
 
 
 
@@ -96,14 +96,13 @@ require_once(WMACS_ABSPATH . '/inc/functions.php');
 
 
 
-// AJAX actions
+// Updates through the Wemake update server (repository.wemake.co.il)
 
 
 
-if (isset($_GET['action']) && (function_exists('wp_doing_ajax') &&  wp_doing_ajax() || defined('DOING_AJAX'))) {
+require_once(WMACS_ABSPATH . '/inc/class-wemake-update-client.php');
 
-    require_once(WMACS_ABSPATH . '/inc/action.php');
-}
+new Wemake_Update_Client_1_0(__FILE__, WMACS_PLUGIN_SLUG, WMACS_PLUGIN_VERSION);
 
 
 

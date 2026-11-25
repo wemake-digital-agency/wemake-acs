@@ -6,22 +6,6 @@ if(get_option('wmacs_l')) return false;
 
 
 
-// Maintenance mode
-
-
-
-add_action('template_redirect', function(){
-
-    if(wmacs_get_maintenance_status()){
-
-        die('<h1 align="center">'.__('Briefly unavailable for scheduled maintenance. Check back in a minute.', WMACS_PLUGIN_SLUG).'</h1>');
-
-    }
-
-});
-
-
-
 add_action('wp_enqueue_scripts', function(){
 
 
