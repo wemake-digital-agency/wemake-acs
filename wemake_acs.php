@@ -8,7 +8,7 @@ Description: Wemake Accessibility plugin
 
 Plugin URI: https://www.wemake.co.il/
 
-Version: 1.63
+Version: 1.63.1
 
 Author: Wemake Team
 
@@ -62,7 +62,7 @@ define("WMACS_PLUGIN_NAME", 'Wemake Accessibility');
 
 define("WMACS_PLUGIN_SLUG", 'wemake-acs');
 
-define("WMACS_PLUGIN_VERSION", '1.63');
+define("WMACS_PLUGIN_VERSION", '1.63.1');
 
 define("WMACS_ABSPATH", dirname(__FILE__));
 

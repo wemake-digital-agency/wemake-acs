@@ -156,24 +156,6 @@ body.wp-admin .wmacs-form-submit {
 body.wp-admin .wmacs-form-submit:hover {
   background: #008acc;
 }
-body.wp-admin .plugins #wemake-acs-update .notice > p {
-  display: none;
-}
-body.wp-admin .plugins #wemake-acs-update .notice > p.update-text {
-  display: block;
-}
-body.wp-admin .plugins #wemake-acs-update.updated .notice > p {
-  display: none;
-}
-body.wp-admin .plugins #wemake-acs-update.updated .notice > p.update-success-text {
-  display: block;
-}
-body.wp-admin .plugins #wemake-acs-update.updating-message .notice > p {
-  display: none;
-}
-body.wp-admin .plugins #wemake-acs-update.updating-message .notice > p.update-active-text {
-  display: block;
-}
 body.wp-admin .sp-replacer {
   border-radius: 50px;
   border: 1px solid #C0C0C0;
